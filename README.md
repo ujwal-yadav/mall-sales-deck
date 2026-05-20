@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mall of America — Interactive Sales Deck
+
+A fully interactive, browser-based sales deck for **Mall of America**, the largest shopping mall in the United States. Built as a cinematic, luxury-grade presentation tool for prospective tenants, sponsors, and event partners.
+
+## Live Demo
+
+> Deploy to Vercel for a live URL: `npx vercel`
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 15 (App Router, Static Export) |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4 |
+| Animation | Framer Motion |
+| Icons | Lucide React |
+| Fonts | Inter + Playfair Display (Google Fonts) |
+| Deployment | Vercel (static export) |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Serve production build
+npx serve out
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx          # Root layout with fonts & metadata
+│   ├── page.tsx            # Main deck page
+│   └── globals.css         # Design tokens & global styles
+├── components/
+│   ├── layout/             # Navigation, section wrappers
+│   ├── sections/           # 8 deck sections (Hero → CTA)
+│   ├── ui/                 # Reusable UI components
+│   └── modules/            # Phase 2 expandable sub-modules
+├── hooks/                  # Custom React hooks
+├── lib/                    # Constants, utilities
+└── types/                  # TypeScript interfaces
+```
 
-## Learn More
+## Deck Sections
 
-To learn more about Next.js, take a look at the following resources:
+1. **Hero** — Cinematic opening with full-viewport imagery and staggered text animation
+2. **Why Mall of America** — Key stats (5.6M sq ft, 520+ stores, 32M visitors), location advantages, demographics
+3. **Retail** — Category breakdown, tenant logos, growth trajectory
+4. **Luxury** — Premium positioning, connected hotels, elevated aesthetic
+5. **Dining & Lifestyle** — 50+ dining concepts, category showcase
+6. **Attractions & Entertainment** — Nickelodeon Universe, SEA LIFE, FlyOver America, and more
+7. **Events & Platform** — 400+ annual events, venue specs, expandable venue details
+8. **CTA** — Three business action paths: Lease, Partner, Host
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Phase 2: Expandable Modules
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Built and ready for deeper engagement:
 
-## Deploy on Vercel
+- **Events Module** — Detailed venue specs, event type breakdown, booking inquiry form
+- **Leasing Module** — Segmented paths (Luxury, Retail, F&B, Pop-Up) with tailored pitches
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Design Decisions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Dark luxury palette** with gold accents (#c8a96e) for premium feel
+- **Non-linear navigation** — side dot nav + sticky top bar for DigiDeck-style exploration
+- **Scroll-triggered animations** via Framer Motion `whileInView` for cinematic reveals
+- **Glassmorphism cards** for elevated, modern UI surfaces
+- **Static export** for maximum performance and easy deployment
+- **Modular architecture** — each section is a self-contained component that can expand into sub-modules without refactoring
+
+## AI Tools Used
+
+- **Claude (Anthropic)** — Architecture planning, component design, content strategy, code generation
+- **Stock imagery** from Unsplash for visual placeholders
+
+## Performance
+
+- Static HTML export (no server required)
+- Lazy-loaded images via `next/image`
+- Minimal dependencies (Framer Motion + Tailwind + Lucide)
+- Optimized fonts via `next/font/google`
+- Target: 90+ Lighthouse performance score
+
+## What I'd Improve With More Time
+
+- Real video assets (hero video loop, section background videos)
+- Interactive floor plan / map component
+- Real-time availability calendar for event booking
+- Analytics integration for tracking viewer engagement
+- AI-generated renderings for hypothetical venue configurations
+- Personalization engine (prospect name, tailored content)
+- PDF export capability for offline sharing
