@@ -12,8 +12,8 @@ export default function HeroSection() {
     >
       {/* Background video */}
       <VideoBackground
-        src="/videos/hero-mall.mp4#t=24"
-        poster="/images/hero-mall.jpg"
+        src=""
+        poster=""
         overlayOpacity={0.55}
       />
 
