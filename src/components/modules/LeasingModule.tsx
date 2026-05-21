@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import GlassCard from "@/components/ui/GlassCard";
 import Button from "@/components/ui/Button";
-import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { LEASING_PATHS } from "@/lib/constants";
 import Image from "next/image";
 import { X, CheckCircle, ArrowRight } from "lucide-react";

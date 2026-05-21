@@ -4,7 +4,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import GlassCard from "@/components/ui/GlassCard";
 import { RETAIL_CATEGORIES, KEY_TENANTS, UPCOMING_TENANTS } from "@/lib/constants";
 import Image from "next/image";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 
 export default function RetailSection() {
   return (
